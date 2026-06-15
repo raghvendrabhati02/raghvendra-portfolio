@@ -30,7 +30,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="headline__subtitle flex items-center gap-2 mb-3"
+          className="headline__subtitle flex items-center gap-2 mb-[clamp(8px,1.5vh,16px)]"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="currentColor">
             <path d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
@@ -45,7 +45,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display font-bold text-[clamp(2.4rem,4.5vw,5rem)] leading-[1.1] tracking-[-0.02em] text-[var(--t-bright)] mb-1 uppercase"
+          className="font-display font-bold text-[clamp(2.2rem,4vw,4.5rem)] leading-[1.1] tracking-[-0.02em] text-[var(--t-bright)] mb-[clamp(4px,0.8vh,8px)] uppercase"
         >
           I&apos;M RAGHVENDRA BHATI
         </motion.h1>
@@ -55,7 +55,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.23 }}
-          className="font-display font-bold text-[clamp(1.6rem,3vw,2.6rem)] leading-[1.1] tracking-[-0.02em] text-[var(--accent)] mb-3 uppercase"
+          className="font-display font-bold text-[clamp(1.4rem,2.5vw,2.2rem)] leading-[1.1] tracking-[-0.02em] text-[var(--accent)] mb-[clamp(8px,1.5vh,16px)] uppercase"
         >
           A DATA SCIENTIST &amp; AI ENGINEER
         </motion.h2>
@@ -65,13 +65,13 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="font-body text-[clamp(1.3rem,1.1vw,1.5rem)] text-[var(--t-medium)] max-w-[68rem] mb-5 leading-relaxed"
+          className="font-body text-[clamp(1.2rem,1.1vw,1.45rem)] text-[var(--t-medium)] max-w-[64rem] mb-[clamp(12px,2.5vh,24px)] leading-relaxed"
         >
           Final-year Computer Science student specializing in Artificial Intelligence, Machine Learning, Data Science, Agentic AI Systems, and Enterprise AI Solutions. Currently developing production-grade AI applications and multi-agent systems at Bridgestone India.
         </motion.p>
 
         {/* Buttons holding works and CV download + Scroll Indicator */}
-        <div className="flex flex-row flex-wrap items-center gap-4 sm:gap-6 lg:gap-8 w-full mt-4 lg:mt-5">
+        <div className="flex flex-row flex-wrap items-center gap-4 sm:gap-6 lg:gap-8 w-full mt-[clamp(12px,2.5vh,20px)]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

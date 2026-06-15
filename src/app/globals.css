@@ -301,10 +301,10 @@ body {
 @media only screen and (min-width: 992px) {
   .avatar {
     position: fixed;
-    top: 2.5rem;
+    top: clamp(1.5rem, 3vh, 2.5rem);
     left: 20px;
     width: 280px;
-    height: calc(100vh - 5rem);
+    height: calc(100vh - clamp(3rem, 6vh, 5rem));
     margin: 0;
     padding-top: 0;
     padding-bottom: 0;
@@ -319,10 +319,10 @@ body {
 
 @media only screen and (min-width: 1400px) {
   .avatar {
-    top: 3rem;
+    top: clamp(2rem, 4vh, 3rem);
     left: 40px;
     width: 320px;
-    height: calc(100vh - 6rem);
+    height: calc(100vh - clamp(4rem, 8vh, 6rem));
   }
 }
 
@@ -336,10 +336,11 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 2.2rem;
+  padding: clamp(1.2rem, 2vh, 1.8rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: clamp(0.8rem, 1.5vh, 1.5rem);
 }
 
 .avatar__container::before {
@@ -358,7 +359,7 @@ body {
 
 @media only screen and (min-width: 1400px) {
   .avatar__container {
-    padding: 3rem;
+    padding: clamp(1.4rem, 2.5vh, 2.2rem);
   }
 }
 
@@ -468,8 +469,8 @@ section.main {
 /* Specific styling for Hero / Intro section to fit first screen viewport */
 section.main.intro {
   min-height: calc(100vh - 80px);
-  padding-top: clamp(40px, 6vh, 80px);
-  padding-bottom: clamp(30px, 4vh, 60px);
+  padding-top: clamp(30px, 4vh, 60px);
+  padding-bottom: clamp(20px, 3vh, 40px);
   box-sizing: border-box;
 }
 
@@ -485,10 +486,13 @@ section.main.intro {
     padding: 14rem 0 6rem 0;
   }
   section.main.intro {
-    height: calc(100vh - 60px); /* Fit desktop exactly inside viewport */
-    min-height: calc(100vh - 80px);
-    padding-top: clamp(60px, 8vh, 100px);
-    padding-bottom: clamp(40px, 6vh, 80px);
+    height: auto; /* Let it flow naturally to prevent clipping */
+    min-height: calc(100vh - clamp(3rem, 6vh, 5rem)); /* Align with left sidebar card */
+    padding-top: clamp(40px, 6vh, 70px);
+    padding-bottom: clamp(30px, 4vh, 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -497,7 +501,7 @@ section.main.intro {
     padding: 16rem 0 6rem 0;
   }
   section.main.intro {
-    padding-top: clamp(80px, 10vh, 120px);
+    padding-top: clamp(50px, 7vh, 80px);
   }
 }
 
@@ -829,8 +833,8 @@ p.small {
 /* ===== ROTATING SCROLL BUTTON ===== */
 .rotating-btn {
   position: relative;
-  width: clamp(80px, 8vh, 110px);
-  height: clamp(80px, 8vh, 110px);
+  width: clamp(70px, 7vh, 95px);
+  height: clamp(70px, 7vh, 95px);
   display: inline-flex;
   align-items: center;
   justify-content: center;

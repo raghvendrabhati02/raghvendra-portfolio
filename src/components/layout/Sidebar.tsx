@@ -21,49 +21,31 @@ export default function Sidebar() {
   return (
     <aside id="avatar" className="avatar">
       <div className="avatar__container">
-        
+
         {/* Block 1: Logo and Profile Image */}
-        <div className="avatar__block">
-          {/* Logo */}
-          <div className="avatar__logo flex items-center mb-4 lg:mb-5">
-            <div className="logo__image w-[50px] h-[50px] lg:w-[60px] lg:h-[60px]">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                x="0px" y="0px"
-                width="100%" height="100%" 
-                viewBox="0 0 85 85" 
-                className="gradient-fill"
-              >
-                <defs>
-                  <linearGradient id="logoGradient" x1="9.9604" y1="75.0338" x2="75.0387" y2="9.9555" gradientUnits="userSpaceOnUse">
-                    <stop offset="0" stopColor="var(--accent)" />
-                    <stop offset="1" stopColor="var(--secondary)" />
-                  </linearGradient>
-                </defs>
-                <g>
-                  <path fill="url(#logoGradient)" d="M51,0H34C15.2,0,0,15.2,0,34v17c0,14.3,8.9,26.6,21.4,31.6c0,0,0,0,0,0l0,0C25.3,84.1,29.5,85,34,85h17
-                    c6,0,11.7-1.6,16.6-4.3c0.1-0.1,0.2-0.1,0.3-0.2C78.1,74.6,85,63.6,85,51V34C85,15.2,69.8,0,51,0z M83,51c0,10.7-5.3,20.2-13.4,26
-                    v-2.5v-3.9h3.9v-3.9h-3.9v-3.9h3.9v-3.9h-3.9H67v-3.9V51h-3.9v3.9v3.9h2.6v3.9v3.9v3.9h-3.9h-3.9v3.9h3.9h3.9v3.9v1
-                    C61.3,81.7,56.3,83,51,83H34c-4.5,0-8.7-0.9-12.6-2.6v-2v-3.9h3.9h3.9v-3.9h-3.9h-3.9v-3.9v-3.9v-3.9H24v-3.9V51h-3.9v3.9v3.9h-2.6
-                    h-3.9v3.9h3.9v3.9h-3.9v3.9h3.9v3.9v3.9C8.2,72.8,2,62.6,2,51V34C2,16.4,16.4,2,34,2h17c17.6,0,32,14.4,32,32V51z M50.1,54.9H54
-                    v3.9v3.9h-3.9v-3.9V54.9z M33.1,54.9H37v3.9v3.9h-3.9v-3.9V54.9z M27.9,51H24v-3.9v-3.9v-3.9h3.9v3.9v3.9V51z M31.8,39.3h-3.9v-3.9
-                    h3.9V39.3z M31.8,43.2v-3.9h3.9v3.9H31.8z M63.1,47.1V51h-3.9v-3.9v-3.9v-3.9h3.9v3.9V47.1z M35.7,47.1v-3.9h3.9h3.9h3.9h3.9v3.9
-                    h-3.9h-3.9h-3.9H35.7z M59.2,39.3h-3.9v-3.9h3.9V39.3z M55.3,43.2h-3.9v-3.9h3.9V43.2z"/>
-                </g>
-              </svg>
+        <div className="avatar__block flex flex-col gap-4 w-full">
+          {/* Logo, Name and Role Subtitle Container */}
+          <div className="flex flex-col gap-2 w-full">
+            <div className="avatar__logo flex items-center mb-0">
+              {/* Premium Geometric Monogram Logo */}
+              <div className="logo__image w-[36px] h-[36px] lg:w-[42px] lg:h-[42px] rounded-lg bg-gradient-to-tr from-[var(--accent)] to-[var(--secondary)] flex items-center justify-center text-[var(--t-opp-bright)] font-display font-black text-[1.4rem] lg:text-[1.7rem] tracking-tight shadow-[0_2px_10px_rgba(139,92,246,0.15)] select-none">
+                RB
+              </div>
+              {/* Name Block */}
+              <div className="logo__caption pl-3">
+                <p className="font-display font-bold text-[1.6rem] lg:text-[1.8rem] leading-[1.05] tracking-tight text-[var(--t-bright)]">
+                  RAGHVENDRA<br />BHATI
+                </p>
+              </div>
             </div>
-            <div className="logo__caption pl-4">
-              <p className="font-display font-bold text-[2.4rem] lg:text-[3rem] leading-[1.06] text-[var(--t-bright)]">
-                RAGHVENDRA<br />BHATI
-              </p>
-            </div>
+
           </div>
- 
+
           {/* Profile Avatar Image */}
-          <div className="avatar__image overflow-hidden rounded-[var(--_radius-l)] mb-2 relative aspect-square max-w-[240px] xl:max-w-[260px] mx-auto w-full">
-            <Image 
-              src="/img/raghvendra_avatar.png" 
-              alt="Raghvendra Bhati Profile Avatar" 
+          <div className="avatar__image overflow-hidden rounded-[var(--_radius-m)] relative aspect-[3/4] w-[80%] mx-auto shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
+            <Image
+              src="/img/raghvendra_avatar.png"
+              alt="Raghvendra Bhati Profile Avatar"
               fill
               sizes="(max-width: 991px) 100vw, 260px"
               priority
@@ -71,68 +53,66 @@ export default function Sidebar() {
             />
           </div>
         </div>
- 
-        {/* Block 2: Specialization */}
-        <div className="avatar__block mb-4 lg:mb-0">
-          <h6 className="font-display font-bold text-[1.5rem] lg:text-[1.8rem] leading-normal text-[var(--t-bright)]">
-            <small className="block font-sans font-normal text-[1.2rem] lg:text-[1.4rem] text-[var(--t-medium)] mb-1">
-              Specialization:
-            </small>
-            Data Scientist &<br />AI Engineer
-          </h6>
+
+        {/* Block 2: Stacked Role Badges */}
+        <div className="avatar__block flex flex-col gap-1.5 items-center w-full">
+          <div className="text-[1rem] lg:text-[1.1rem] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-[4px] bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 text-center select-none shadow-[0_2px_8px_rgba(168,85,247,0.03)]">
+            AI Engineer
+          </div>
+          <div className="text-[1rem] lg:text-[1.1rem] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-[4px] bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 text-center select-none shadow-[0_2px_8px_rgba(168,85,247,0.03)]">
+            Data Scientist
+          </div>
+          <div className="text-[1rem] lg:text-[1.1rem] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-[4px] bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 text-center select-none shadow-[0_2px_8px_rgba(168,85,247,0.03)]">
+            Agentic AI Developer
+          </div>
         </div>
- 
-        {/* Block 3: Based in */}
-        <div className="avatar__block mb-4 lg:mb-0">
-          <h6 className="font-display font-bold text-[1.5rem] lg:text-[1.8rem] leading-normal text-[var(--t-bright)]">
-            <small className="block font-sans font-normal text-[1.2rem] lg:text-[1.4rem] text-[var(--t-medium)] mb-1">
-              Based in:
-            </small>
-            Indore, MP, India
-          </h6>
+
+        {/* Block 3: Location */}
+        <div className="avatar__block flex items-center justify-center gap-1.5 text-[var(--t-medium)] text-[1.2rem] lg:text-[1.3rem] font-sans font-medium">
+          <span>📍</span>
+          <span>Indore, MP, India</span>
         </div>
- 
-        {/* Block 3.5: Status */}
-        <div className="avatar__block mb-4 lg:mb-0">
-          <h6 className="font-display font-bold text-[1.4rem] lg:text-[1.6rem] leading-snug text-[var(--t-bright)]">
-            <small className="block font-sans font-normal text-[1.2rem] lg:text-[1.4rem] text-[var(--t-medium)] mb-1">
-              Status:
-            </small>
-            Open to AI, ML, Data Science & Agentic AI opportunities
-          </h6>
+
+        {/* Block 3.5: Status Availability Indicator */}
+        <div className="avatar__block flex items-center justify-center gap-2 px-3.5 py-1.5 rounded-full bg-[rgba(16,185,129,0.04)] border border-[rgba(16,185,129,0.15)] text-[var(--t-bright)] text-[1.1rem] lg:text-[1.2rem] font-sans font-semibold w-full max-w-[250px] mx-auto select-none shadow-[0_2px_8px_rgba(16,185,129,0.02)]">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Open to AI, ML & Agentic AI</span>
         </div>
- 
+
         {/* Block 4: Socials and CTA button */}
-        <div className="avatar__block">
+        <div className="avatar__block flex flex-col gap-3.5 w-full">
           {/* Socials */}
-          <div className="avatar__socials mb-3">
-            <ul className="flex justify-between items-center gap-2">
-              <li className="flex-1">
-                <a 
-                  className="w-full h-12 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
-                  href="https://github.com/raghvendrabhati02" 
-                  target="_blank" 
+          <div className="avatar__socials w-full">
+            <ul className="flex justify-center items-center gap-3">
+              <li>
+                <a
+                  className="w-10 h-10 rounded-full flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:-translate-y-0.5 transition-all duration-300"
+                  href="https://github.com/raghvendrabhati02"
+                  target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
                   <i className="fa-brands fa-github text-lg"></i>
                 </a>
               </li>
-              <li className="flex-1">
-                <a 
-                  className="w-full h-12 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
-                  href="https://www.linkedin.com/in/raghvendrabhati0217" 
-                  target="_blank" 
+              <li>
+                <a
+                  className="w-10 h-10 rounded-full flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:-translate-y-0.5 transition-all duration-300"
+                  href="https://www.linkedin.com/in/raghvendrabhati0217"
+                  target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
                   <i className="fa-brands fa-linkedin-in text-lg"></i>
                 </a>
               </li>
-              <li className="flex-1">
-                <a 
-                  className="w-full h-12 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
-                  href="mailto:raghuthakur0217@gmail.com" 
+              <li>
+                <a
+                  className="w-10 h-10 rounded-full flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 hover:-translate-y-0.5 transition-all duration-300"
+                  href="mailto:raghuthakur0217@gmail.com"
                   aria-label="Email"
                 >
                   <i className="fa-solid fa-envelope text-lg"></i>
@@ -140,15 +120,15 @@ export default function Sidebar() {
               </li>
             </ul>
           </div>
- 
+
           {/* CTA Button */}
           <div className="avatar__btnholder w-full">
-            <a 
-              className="btn btn-default btn-hover-accent w-full flex items-center justify-center text-center font-display font-bold h-14 lg:h-16 text-[1.4rem] lg:text-[1.6rem] rounded-[var(--_radius-m)] transition-all duration-300"
+            <a
+              className="btn btn-default btn-hover-accent w-full flex items-center justify-center text-center font-display font-bold h-11 lg:h-12 text-[1.3rem] lg:text-[1.4rem] rounded-[var(--_radius-m)] transition-all duration-300"
               href="#contact"
               onClick={handleContactClick}
             >
-              Let&apos;s Work Together!
+              Let&apos;s Work Together
             </a>
           </div>
         </div>
