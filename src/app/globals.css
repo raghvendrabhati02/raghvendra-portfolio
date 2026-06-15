@@ -299,10 +299,10 @@ body {
 @media only screen and (min-width: 992px) {
   .avatar {
     position: fixed;
-    top: 3rem;
-    left: 30px;
-    width: 300px;
-    height: calc(100vh - 6rem);
+    top: 2.5rem;
+    left: 20px;
+    width: 280px;
+    height: calc(100vh - 5rem);
     margin: 0;
     padding-top: 0;
     padding-bottom: 0;
@@ -311,22 +311,22 @@ body {
 
 @media only screen and (min-width: 1200px) {
   .avatar {
-    left: 50px;
+    left: 30px;
   }
 }
 
 @media only screen and (min-width: 1400px) {
   .avatar {
-    top: 5rem;
-    left: 60px;
-    width: 360px;
-    height: calc(100vh - 10rem);
+    top: 3rem;
+    left: 40px;
+    width: 320px;
+    height: calc(100vh - 6rem);
   }
 }
 
 @media only screen and (min-width: 1600px) {
   .avatar {
-    left: 80px;
+    left: 50px;
   }
 }
 
@@ -334,7 +334,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 3rem;
+  padding: 2.2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -356,7 +356,7 @@ body {
 
 @media only screen and (min-width: 1400px) {
   .avatar__container {
-    padding: 5rem;
+    padding: 3rem;
   }
 }
 
@@ -371,25 +371,25 @@ body {
 
 @media only screen and (min-width: 992px) {
   .content {
-    padding-left: 410px; /* 30px left + 300px width + 80px gap */
+    padding-left: 350px; /* 20px left + 280px width + 50px gap */
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .content {
-    padding-left: 440px; /* 50px left + 300px width + 90px gap */
+    padding-left: 370px; /* 30px left + 280px width + 60px gap */
   }
 }
 
 @media only screen and (min-width: 1400px) {
   .content {
-    padding-left: 520px; /* 60px left + 360px width + 100px gap */
+    padding-left: 430px; /* 40px left + 320px width + 70px gap */
   }
 }
 
 @media only screen and (min-width: 1600px) {
   .content {
-    padding-left: 560px; /* 80px left + 360px width + 120px gap */
+    padding-left: 450px; /* 50px left + 320px width + 80px gap */
   }
 }
 
@@ -463,10 +463,30 @@ section.main {
   justify-content: center;
 }
 
+/* Specific styling for Hero / Intro section to fit first screen viewport */
+section.main.intro {
+  min-height: calc(100vh - 80px);
+  padding-top: clamp(40px, 6vh, 80px);
+  padding-bottom: clamp(30px, 4vh, 60px);
+  box-sizing: border-box;
+}
+
+.headline {
+  width: 100%;
+  max-width: 900px;
+  margin: 0;
+}
+
 @media only screen and (min-width: 992px) {
   section.main {
     height: auto;
     padding: 14rem 0 6rem 0;
+  }
+  section.main.intro {
+    height: calc(100vh - 60px); /* Fit desktop exactly inside viewport */
+    min-height: calc(100vh - 80px);
+    padding-top: clamp(60px, 8vh, 100px);
+    padding-bottom: clamp(40px, 6vh, 80px);
   }
 }
 
@@ -474,11 +494,33 @@ section.main {
   section.main {
     padding: 16rem 0 6rem 0;
   }
+  section.main.intro {
+    padding-top: clamp(80px, 10vh, 120px);
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  /* Center the block within the remaining layout space on larger desktop viewports */
+  section.main.intro {
+    align-items: center;
+  }
+  .headline {
+    max-width: 1000px;
+  }
 }
 
 @media only screen and (min-width: 1600px) {
   section.main {
     padding: 18rem 0 6rem 0;
+  }
+  .headline {
+    max-width: 1100px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .headline {
+    max-width: 1200px;
   }
 }
 
@@ -551,7 +593,7 @@ section.inner-first {
     right: 0;
     bottom: auto;
     transform: translateX(0);
-    width: calc(100% - 330px);
+    width: calc(100% - 300px);
     height: 5rem;
     padding: 0 3rem;
     background-color: transparent;
@@ -594,21 +636,21 @@ section.inner-first {
 @media only screen and (min-width: 1200px) {
   .header {
     padding: 0 6rem 0 3rem;
-    width: calc(100% - 360px);
+    width: calc(100% - 320px);
   }
 }
 
 @media only screen and (min-width: 1400px) {
   .header {
     top: 5rem;
-    width: calc(100% - 480px);
+    width: calc(100% - 390px);
     padding: 0 8rem 0 5rem;
   }
 }
 
 @media only screen and (min-width: 1600px) {
   .header {
-    width: calc(100% - 500px);
+    width: calc(100% - 410px);
     height: 6rem;
     padding: 0 10rem 0 5rem;
   }
@@ -785,8 +827,8 @@ p.small {
 /* ===== ROTATING SCROLL BUTTON ===== */
 .rotating-btn {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: clamp(80px, 8vh, 110px);
+  height: clamp(80px, 8vh, 110px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -807,8 +849,8 @@ p.small {
   animation: rotate-text 15s linear infinite;
   fill: var(--t-muted);
   font-family: var(--font-display);
-  font-size: 12px;
-  letter-spacing: 2.5px;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -816,7 +858,7 @@ p.small {
 .rotating-btn__link i {
   position: absolute;
   color: var(--t-bright);
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 1.5vh, 1.6rem);
 }
 
 @keyframes rotate-text {
@@ -1121,5 +1163,22 @@ html[data-theme="light"] .ambient-glow {
   }
 }
 
+/* Achievements Section Responsive Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
 
+@media only screen and (min-width: 640px) {
+  .achievements-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
 
+@media only screen and (min-width: 1400px) {
+  .achievements-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

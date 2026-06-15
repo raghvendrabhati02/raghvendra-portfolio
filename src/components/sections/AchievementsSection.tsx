@@ -46,7 +46,7 @@ const accentColors = [
 
 export default function AchievementsSection() {
   return (
-    <section className="relative py-20 overflow-hidden"
+    <section className="relative py-16 overflow-hidden"
       style={{ background: 'var(--base)', borderTop: '1px solid var(--stroke-elements)', borderBottom: '1px solid var(--stroke-elements)' }}>
 
       {/* Subtle vertical lines */}
@@ -56,7 +56,7 @@ export default function AchievementsSection() {
         }} />
 
       <div className="container-xl relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        <div className="achievements-grid">
           {ACHIEVEMENTS.map((ach, i) => (
             <Reveal key={ach.label} delay={i * 0.1}>
               <motion.div
@@ -64,7 +64,7 @@ export default function AchievementsSection() {
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 className="achievements__card text-center cursor-default"
                 style={{
-                  padding: 'clamp(24px, 4vw, 40px) 20px',
+                  padding: 'clamp(18px, 2.5vw, 28px) 16px',
                   borderRadius: '20px',
                   border: '1px solid var(--stroke-elements)',
                   background: 'var(--base-tint)',
@@ -73,9 +73,9 @@ export default function AchievementsSection() {
                 onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--accent)')}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--stroke-elements)')}
               >
-                <p className="font-display font-bold leading-none mb-3"
+                <p className="font-display font-bold leading-tight mb-2 break-words"
                   style={{
-                    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                    fontSize: isNaN(parseInt(ach.value)) ? 'clamp(2rem, 3.2vw, 2.8rem)' : 'clamp(2.4rem, 4.5vw, 3.6rem)',
                     background: `linear-gradient(135deg, ${accentColors[i].from}, ${accentColors[i].to})`,
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',

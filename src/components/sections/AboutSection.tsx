@@ -5,9 +5,9 @@ import Image from 'next/image'
 
 export default function AboutSection() {
   const achievements = [
-    { number: '20+', label: 'Projects Built' },
+    { number: '10+', label: 'Projects Built' },
     { number: '1+', label: 'Years of Experience' },
-    { number: 'Multiple', label: 'AI Systems Developed' },
+    { number: '5+', label: 'AI Systems Developed' },
   ]
 
   const services = [

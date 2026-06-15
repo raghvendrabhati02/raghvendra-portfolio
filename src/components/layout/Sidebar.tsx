@@ -25,8 +25,8 @@ export default function Sidebar() {
         {/* Block 1: Logo and Profile Image */}
         <div className="avatar__block">
           {/* Logo */}
-          <div className="avatar__logo flex items-center mb-6 lg:mb-8">
-            <div className="logo__image w-[60px] h-[60px] lg:w-[75px] lg:h-[75px]">
+          <div className="avatar__logo flex items-center mb-4 lg:mb-5">
+            <div className="logo__image w-[50px] h-[50px] lg:w-[60px] lg:h-[60px]">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 x="0px" y="0px"
@@ -52,99 +52,99 @@ export default function Sidebar() {
                 </g>
               </svg>
             </div>
-            <div className="logo__caption pl-5">
-              <p className="font-display font-bold text-[2.8rem] lg:text-[3.6rem] leading-[1.06] text-[var(--t-bright)]">
+            <div className="logo__caption pl-4">
+              <p className="font-display font-bold text-[2.4rem] lg:text-[3rem] leading-[1.06] text-[var(--t-bright)]">
                 RAGHVENDRA<br />BHATI
               </p>
             </div>
           </div>
-
+ 
           {/* Profile Avatar Image */}
-          <div className="avatar__image overflow-hidden rounded-[var(--_radius-l)] mb-2 relative aspect-square max-w-[360px] mx-auto w-full">
+          <div className="avatar__image overflow-hidden rounded-[var(--_radius-l)] mb-2 relative aspect-square max-w-[240px] xl:max-w-[260px] mx-auto w-full">
             <Image 
               src="/img/raghvendra_avatar.png" 
               alt="Raghvendra Bhati Profile Avatar" 
               fill
-              sizes="(max-width: 991px) 100vw, 360px"
+              sizes="(max-width: 991px) 100vw, 260px"
               priority
               className="object-cover"
             />
           </div>
         </div>
-
+ 
         {/* Block 2: Specialization */}
-        <div className="avatar__block mb-8 lg:mb-0">
-          <h6 className="font-display font-bold text-[1.6rem] lg:text-[2rem] leading-normal text-[var(--t-bright)]">
-            <small className="block font-sans font-normal text-[1.3rem] lg:text-[1.5rem] text-[var(--t-medium)] mb-1">
+        <div className="avatar__block mb-4 lg:mb-0">
+          <h6 className="font-display font-bold text-[1.5rem] lg:text-[1.8rem] leading-normal text-[var(--t-bright)]">
+            <small className="block font-sans font-normal text-[1.2rem] lg:text-[1.4rem] text-[var(--t-medium)] mb-1">
               Specialization:
             </small>
             Data Scientist &<br />AI Engineer
           </h6>
         </div>
-
+ 
         {/* Block 3: Based in */}
-        <div className="avatar__block mb-8 lg:mb-0">
-          <h6 className="font-display font-bold text-[1.6rem] lg:text-[2rem] leading-normal text-[var(--t-bright)]">
-            <small className="block font-sans font-normal text-[1.3rem] lg:text-[1.5rem] text-[var(--t-medium)] mb-1">
+        <div className="avatar__block mb-4 lg:mb-0">
+          <h6 className="font-display font-bold text-[1.5rem] lg:text-[1.8rem] leading-normal text-[var(--t-bright)]">
+            <small className="block font-sans font-normal text-[1.2rem] lg:text-[1.4rem] text-[var(--t-medium)] mb-1">
               Based in:
             </small>
             Indore, MP, India
           </h6>
         </div>
-
+ 
         {/* Block 3.5: Status */}
-        <div className="avatar__block mb-8 lg:mb-0">
-          <h6 className="font-display font-bold text-[1.5rem] lg:text-[1.8rem] leading-snug text-[var(--t-bright)]">
-            <small className="block font-sans font-normal text-[1.3rem] lg:text-[1.5rem] text-[var(--t-medium)] mb-1">
+        <div className="avatar__block mb-4 lg:mb-0">
+          <h6 className="font-display font-bold text-[1.4rem] lg:text-[1.6rem] leading-snug text-[var(--t-bright)]">
+            <small className="block font-sans font-normal text-[1.2rem] lg:text-[1.4rem] text-[var(--t-medium)] mb-1">
               Status:
             </small>
             Open to AI, ML, Data Science & Agentic AI opportunities
           </h6>
         </div>
-
+ 
         {/* Block 4: Socials and CTA button */}
         <div className="avatar__block">
           {/* Socials */}
-          <div className="avatar__socials mb-4">
+          <div className="avatar__socials mb-3">
             <ul className="flex justify-between items-center gap-2">
               <li className="flex-1">
                 <a 
-                  className="w-full h-16 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
+                  className="w-full h-12 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
                   href="https://github.com/raghvendrabhati02" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
-                  <i className="fa-brands fa-github text-xl"></i>
+                  <i className="fa-brands fa-github text-lg"></i>
                 </a>
               </li>
               <li className="flex-1">
                 <a 
-                  className="w-full h-16 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
+                  className="w-full h-12 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
                   href="https://www.linkedin.com/in/raghvendrabhati0217" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <i className="fa-brands fa-linkedin-in text-xl"></i>
+                  <i className="fa-brands fa-linkedin-in text-lg"></i>
                 </a>
               </li>
               <li className="flex-1">
                 <a 
-                  className="w-full h-16 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
+                  className="w-full h-12 rounded-[var(--_radius-m)] flex items-center justify-center border border-[var(--stroke-elements)] bg-[rgba(255,255,255,0.02)] text-[var(--t-disabled)] hover:text-[var(--t-bright)] hover:border-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
                   href="mailto:raghuthakur0217@gmail.com" 
                   aria-label="Email"
                 >
-                  <i className="fa-solid fa-envelope text-xl"></i>
+                  <i className="fa-solid fa-envelope text-lg"></i>
                 </a>
               </li>
             </ul>
           </div>
-
+ 
           {/* CTA Button */}
           <div className="avatar__btnholder w-full">
             <a 
-              className="btn btn-default btn-hover-accent w-full flex items-center justify-center text-center font-display font-bold h-20 text-[1.6rem] lg:text-[2rem] rounded-[var(--_radius-m)] transition-all duration-300"
+              className="btn btn-default btn-hover-accent w-full flex items-center justify-center text-center font-display font-bold h-14 lg:h-16 text-[1.4rem] lg:text-[1.6rem] rounded-[var(--_radius-m)] transition-all duration-300"
               href="#contact"
               onClick={handleContactClick}
             >

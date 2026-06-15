@@ -140,8 +140,8 @@ export const EXPERIENCES: Experience[] = [
 ]
 
 export const ACHIEVEMENTS: Achievement[] = [
-  { value: '20', label: 'Projects Built', suffix: '+' },
+  { value: '10', label: 'Projects Built', suffix: '+' },
   { value: '1', label: 'Years of Experience', suffix: '+' },
-  { value: 'Multiple', label: 'AI Systems Developed', suffix: '' },
+  { value: '5', label: 'AI Systems Developed', suffix: '+' },
   { value: 'Enterprise', label: 'AI Experience', suffix: '' },
 ]

@@ -1,34 +1,10 @@
 'use client'
-
+ 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-
+import { PROJECTS } from '@/lib/data'
+ 
 export default function ProjectsSection() {
-  const projects = [
-    {
-      title: 'AutoApply AI',
-      tags: ['Python', 'FastAPI', 'OpenAI APIs', 'AI Automation'],
-      desc: 'Built an intelligent job automation platform that automates job applications, recruiter outreach, resume matching, and personalized email generation using AI workflows. Reduced manual job application effort by approximately 60%.',
-      img: '/img/project_autoapply.png',
-      largeImg: '/img/project_autoapply.png',
-    },
-    {
-      title: 'Enterprise Multi-Agent AI System',
-      tags: ['LangGraph', 'FastAPI', 'Ollama', 'Qwen 2.5'],
-      desc: 'Developed enterprise-grade multi-agent AI workflows using LangGraph, FastAPI, and Ollama for business process automation and reporting. Built as part of Bridgestone India internship, improving reporting pipeline efficiency by ~40%.',
-      img: '/img/project_multiagent.png',
-      largeImg: '/img/project_multiagent.png',
-      opposite: true,
-    },
-    {
-      title: 'Legal AI Assistant',
-      tags: ['Python', 'Vector DBs', 'RAG', 'NLP'],
-      desc: 'Built an intelligent legal assistant capable of legal research, contract summarization, semantic search, and document-based question answering. Improved document retrieval efficiency by 30–40%.',
-      img: '/img/project_legal_ai.png',
-      largeImg: '/img/project_legal_ai.png',
-    },
-  ]
-
   return (
     <section id="portfolio" className="inner inner-first portfolio">
       
@@ -46,62 +22,88 @@ export default function ProjectsSection() {
           Check out my featured projects
         </h2>
       </div>
-
+ 
       {/* Works Gallery Block */}
       <div className="content__block grid-block">
         <div className="container-fluid px-0 inner__gallery">
           <div className="row gx-0 my-gallery grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project, idx) => (
-              <motion.figure 
+            {PROJECTS.map((project, idx) => (
+              <motion.div 
                 key={project.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="gallery__item grid-item relative overflow-hidden rounded-[var(--_radius-xl)] border border-[var(--stroke-elements)] bg-[var(--base-tint)] group cursor-pointer"
+                className="gallery__item flex flex-col justify-between overflow-hidden rounded-[var(--_radius-xl)] border border-[var(--stroke-elements)] bg-[var(--base-tint)] group hover:border-[var(--accent)]/30 hover:shadow-[0_0_30px_rgba(168,85,247,0.06)] transition-all duration-500 h-full"
               >
-                {/* Image Wrap */}
-                <div className="gallery__link block w-full overflow-hidden relative aspect-square md:aspect-[4/3] xl:aspect-[5/4] group-hover:scale-[1.03] transition-transform duration-500">
+                {/* Upper part: Image Wrap */}
+                <div className="w-full relative aspect-[16/7.5] overflow-hidden">
                   <Image 
-                    src={project.img} 
+                    src={project.image} 
                     alt={project.title} 
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="gallery__image object-cover transition-opacity duration-300 opacity-90 group-hover:opacity-100"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                     loading="lazy"
                   />
-                  {/* Subtle Dark Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  {/* Subtle dark gradient overlay inside image bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
                 </div>
-
-                {/* Caption / Description Overlay */}
-                <figcaption className={`gallery__descr p-6 absolute bottom-0 left-0 w-full z-10 transition-all duration-300 ${project.opposite ? 'opposite' : ''}`}>
-                  <h5 className="font-display font-bold text-[2rem] lg:text-[2.2rem] text-white leading-normal mb-2">
-                    {project.title}
-                  </h5>
-                  <div className="card__tags flex flex-wrap gap-2 mb-3">
-                    {project.tags.map(tag => (
-                      <span 
-                        key={tag} 
-                        className={`rounded-tag text-[1.2rem] h-10 px-4 flex items-center rounded-[var(--_radius-s)] font-semibold 
-                          ${project.opposite 
-                            ? 'bg-transparent border border-white/20 text-white' 
-                            : 'bg-white text-black border-none'}`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
+ 
+                {/* Lower part: Content section */}
+                <div className="flex-1 flex flex-col justify-between p-5">
+                  <div>
+                    {/* Project Title */}
+                    <h4 className="font-display font-bold text-[2rem] lg:text-[2.2rem] text-[var(--t-bright)] leading-snug mb-2 group-hover:text-[var(--accent)] transition-colors duration-300">
+                      {project.title}
+                    </h4>
+ 
+                    {/* Technology Tags */}
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.tech.map(tag => (
+                        <span 
+                          key={tag} 
+                          className="rounded-tag text-[1rem] h-6 px-2.5 flex items-center rounded-[6px] font-mono tracking-wide bg-[rgba(255,255,255,0.03)] border border-[var(--stroke-elements)] text-[var(--t-medium)]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+ 
+                    {/* Short Description (1-2 lines clamped) */}
+                    <p className="font-body text-[var(--t-muted)] text-[1.4rem] leading-relaxed line-clamp-2 mb-4">
+                      {project.description}
+                    </p>
                   </div>
-                  <p className="small text-[var(--t-medium)] text-[1.5rem] leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
-                    {project.desc}
-                  </p>
-                </figcaption>
-              </motion.figure>
+ 
+                  {/* Action Buttons */}
+                  <div className="flex items-center gap-5 pt-3 border-t border-[var(--stroke-elements)]/40 mt-auto">
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-link-bold flex items-center gap-1.5 text-[1.3rem] font-semibold text-[var(--accent)] hover:text-[var(--t-bright)] transition-colors duration-300"
+                    >
+                      <i className="fa-brands fa-github text-base"></i>
+                      Code
+                    </a>
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-link-bold flex items-center gap-1.5 text-[1.3rem] font-semibold text-[var(--accent)] hover:text-[var(--t-bright)] transition-colors duration-300"
+                    >
+                      <i className="fa-solid fa-arrow-up-right-from-square text-[1.1rem]"></i>
+                      Live Demo
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-
+ 
     </section>
   )
 }
