@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
   {
     id: '1',
     title: 'AutoApply AI',
-    description: 'AI-Powered Job Automation Platform that automates applications, recruiter outreach, resume matching, and personalized email generation.',
+    description: 'AI-Powered Job Automation Platform that automates applications, recruiter outreach, resume matching, personalized email generation, interview tracking, and job workflow management using AI agents and automation pipelines.',
     longDescription: 'Built an intelligent job automation platform that automates job applications, recruiter outreach, resume matching, and personalized email generation using AI workflows. Reduced manual job application effort by approximately 60%.',
     image: '/img/project_autoapply.png',
     tech: ['Python', 'AI Automation', 'FastAPI', 'OpenAI APIs', 'Email Automation'],

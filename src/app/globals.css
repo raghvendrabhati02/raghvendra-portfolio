@@ -23,6 +23,7 @@
   --base-tint: #111111;
   --base-shade: #000000;
   --accent: #C9A6FF;
+  --description-overlay-hover: rgba(0, 0, 0, 0.25);
   --secondary: #CEC4EF;
   --secondary-rgba: rgba(201,166,255,0.15);
   --stroke-controls: #333333;
@@ -64,6 +65,7 @@ html[data-theme="light"], html.light {
   --base-tint: #ECEEF3;
   --base-shade: #FFFFFF; /* Secondary Card background / Inner blocks */
   --accent: #8B5CF6;
+  --description-overlay-hover: rgba(255, 255, 255, 0.45);
   --secondary: #7C3AED;
   --secondary-rgba: rgba(139,92,246,0.15);
   --stroke-controls: #D8DCE6;
