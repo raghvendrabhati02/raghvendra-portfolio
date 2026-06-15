@@ -65,9 +65,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="font-body text-[clamp(1.2rem,1.1vw,1.45rem)] text-[var(--t-medium)] max-w-[64rem] mb-[clamp(12px,2.5vh,24px)] leading-relaxed"
+          className="font-body text-[clamp(1.6rem,1.1vw,1.45rem)] text-[var(--t-medium)] max-w-[68rem] mb-[clamp(16px,2.5vh,24px)] leading-relaxed"
         >
-          Final-year Computer Science student specializing in Artificial Intelligence, Machine Learning, Data Science, Agentic AI Systems, and Enterprise AI Solutions. Currently developing production-grade AI applications and multi-agent systems at Bridgestone India.
+          Final-year Computer Science student specializing in <a href="#skills" className="font-semibold text-[var(--t-bright)] bg-gradient-to-br from-[var(--accent)] to-[var(--secondary)] bg-clip-text text-transparent  "><u>Artificial Intelligence, Machine Learning, Data Science, Agentic AI Systems, and Enterprise AI Solutions</u></a>. Currently developing production-grade AI applications and multi-agent systems at Bridgestone India.
         </motion.p>
 
         {/* Buttons holding works and CV download + Scroll Indicator */}
